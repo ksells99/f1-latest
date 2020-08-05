@@ -1,0 +1,11 @@
+.countdown {
+  text-align: center;
+}
+
+::ng-deep .countdown.countdown {
+  display: block !important;
+}
+
+.spinner-border {
+  margin: 30px auto;
+}

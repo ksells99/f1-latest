@@ -1,0 +1,73 @@
+<div class="container">
+  <button routerLink="/" class="btn btn-success btn-block mb-4">
+    <i class="fas fa-arrow-alt-circle-left"></i> Back
+  </button>
+  <h3 class="mb-4">Championship Standings</h3>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/driver-standings">Driver Standings</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#!">Constructor Standings</a>
+    </li>
+  </ul>
+
+  <div class="card-body" *ngIf="!constructorStandingsLoading">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Pos.</th>
+
+          <th colspan="3">Constructor</th>
+          <th>Pts.</th>
+          <th class="hide-sm">Wins</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Map through constructors-->
+        <tr
+          *ngFor="
+            let constructor of constructorStandings[0].ConstructorStandings
+          "
+        >
+          <td>{{ constructor.position }}</td>
+
+          <td
+            [class]="constructor.Constructor.constructorId"
+            class="colour-team"
+          ></td>
+          <td>
+            <img
+              src="../../../assets/flags/{{
+                constructor.Constructor.nationality
+              }}.png"
+              alt=""
+              style="width: 30px; height: auto;"
+              class="mr-2"
+            />
+            {{ constructor.Constructor.name }}
+          </td>
+          <td>
+            <img
+              src="../../../assets/cars/{{
+                constructor.Constructor.constructorId
+              }}.png"
+              alt=""
+              style="width: 100px; height: auto;"
+            />
+          </td>
+
+          <td>{{ constructor.points }}</td>
+          <td class="hide-sm">{{ constructor.wins }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card border-0">
+    <div
+      *ngIf="constructorStandingsLoading"
+      class="spinner-border text-success text-center"
+      role="status"
+    ></div>
+  </div>
+</div>

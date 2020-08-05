@@ -1,0 +1,62 @@
+<div class="container">
+  <button routerLink="/" class="btn btn-success btn-block mb-4">
+    <i class="fas fa-arrow-alt-circle-left"></i> Back
+  </button>
+  <h3 class="mb-4">Championship Standings</h3>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active">Driver Standings</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/constructor-standings"
+        >Constructor Standings</a
+      >
+    </li>
+  </ul>
+
+  <div class="card-body" *ngIf="!driverStandingsLoading">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Pos.</th>
+
+          <th>Driver</th>
+
+          <th colspan="2">Constructor</th>
+          <th>Pts.</th>
+          <th class="hide-sm">Wins</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Map through driver standings -->
+        <tr *ngFor="let driver of driverStandings[0].DriverStandings">
+          <td>{{ driver.position }}</td>
+
+          <td>
+            <img
+              src="../../../assets/flags/{{ driver.Driver.nationality }}.png"
+              alt=""
+              style="width: 30px; height: auto;"
+              class="mr-2"
+            />
+            {{ driver.Driver.familyName }}
+          </td>
+          <td
+            [class]="driver.Constructors[0].constructorId"
+            class="colour-team"
+          ></td>
+          <td>{{ driver.Constructors[0].name }}</td>
+          <td>{{ driver.points }}</td>
+          <td class="hide-sm">{{ driver.wins }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card border-0">
+    <div
+      *ngIf="driverStandingsLoading"
+      class="spinner-border text-success text-center"
+      role="status"
+    ></div>
+  </div>
+</div>

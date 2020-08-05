@@ -1,0 +1,14 @@
+.full-width {
+  width: 100%;
+}
+
+.spinner-border {
+  height: 100px;
+  width: 100px;
+  margin: 50px auto !important;
+  border-width: 0.4em;
+}
+
+.card-body {
+  padding-bottom: 0;
+}

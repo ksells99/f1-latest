@@ -19,6 +19,11 @@
     "@angular/platform-browser": "~9.1.11",
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
+    "bootstrap": "^4.5.0",
+    "bootswatch": "^4.5.0",
+    "jquery": "^3.5.1",
+    "ng2-date-countdown": "^1.1.2",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

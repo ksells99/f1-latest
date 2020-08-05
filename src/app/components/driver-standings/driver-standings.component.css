@@ -1,0 +1,16 @@
+@media (max-width: 767px) {
+  h3 {
+    text-align: center;
+  }
+
+  ul {
+    justify-content: center;
+  }
+}
+
+.spinner-border {
+  height: 100px;
+  width: 100px;
+  margin: 50px auto !important;
+  border-width: 0.4em;
+}

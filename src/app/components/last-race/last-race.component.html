@@ -1,0 +1,56 @@
+<div class="container">
+  <button routerLink="/" class="btn btn-success btn-block mb-4">
+    <i class="fas fa-arrow-alt-circle-left"></i> Back
+  </button>
+  <div class="card mb-3">
+    <h3 class="text-center mt-3">
+      Last race:
+      <span *ngIf="!lastRaceResultsLoading" class="font-weight-bold">{{
+        lastRaceResults.Races[0].raceName
+      }}</span>
+    </h3>
+    <p class="text-center" *ngIf="!lastRaceResultsLoading">
+      {{ lastRaceResults.Races[0].Circuit.circuitName }} |
+      {{ lastRaceResults.Races[0].date | date: "dd/MM/yyyy" }}
+    </p>
+
+    <div class="card-body" *ngIf="!lastRaceResultsLoading">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Pos.</th>
+            <th>Driver</th>
+
+            <th colspan="2">Constructor</th>
+            <th>Laps</th>
+            <th class="hide-sm">Time</th>
+            <th>Pts.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Map through race results-->
+          <tr *ngFor="let driver of lastRaceResults.Races[0].Results">
+            <td>{{ driver.position }}</td>
+            <td>{{ driver.Driver.familyName }}</td>
+            <td
+              [class]="driver.Constructor.constructorId"
+              class="colour-team"
+            ></td>
+            <td>{{ driver.Constructor.name }}</td>
+            <td>{{ driver.laps }}</td>
+            <!-- Lapped/DNF have no time so need to check -->
+            <td class="hide-sm" *ngIf="driver.Time">
+              {{ driver.Time.time }}
+            </td>
+            <!-- If lapped/DNF, show status rather than time -->
+            <td class="hide-sm" *ngIf="!driver.Time">{{ driver.status }}</td>
+            <td>{{ driver.points }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card border-0" *ngIf="lastRaceResultsLoading">
+      <div class="spinner-border text-success text-center" role="status"></div>
+    </div>
+  </div>
+</div>
