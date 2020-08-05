@@ -106,4 +106,27 @@ div.Secs.measurements {
   .hide-sm {
     display: none;
   }
+
+  .fastest-lap-highlight {
+    color: rgb(236, 0, 236);
+    font-weight: bolder;
+  }
+}
+
+@media (max-width: 767px) {
+  .hide-md {
+    display: none;
+  }
+
+  .fastest-lap-highlight {
+    color: rgb(236, 0, 236);
+    font-weight: bolder;
+  }
+}
+
+/* Fastest lap styling */
+
+.fastest-lap-highlight i {
+  color: rgb(236, 0, 236);
+  font-weight: bolder;
 }

@@ -146,7 +146,7 @@
   <div class="card mb-4">
     <div class="card-header text-center">
       <h3>
-        Last race:
+        Last Race:
         <span *ngIf="!lastRaceResultsLoading" class="font-weight-bold">{{
           lastRaceResults.Races[0].raceName
         }}</span>
@@ -188,7 +188,20 @@
             <td *ngIf="i < 4">{{ driver.Constructor.name }}</td>
             <td *ngIf="i < 4">{{ driver.laps }}</td>
             <td class="hide-sm" *ngIf="i < 4">{{ driver.Time.time }}</td>
-            <td *ngIf="i < 4">{{ driver.points }}</td>
+
+            <!-- Points - use fastest-lap class to turn purple if driver also had FL - show stopwatch icon on larger screens -->
+            <td
+              [ngClass]="
+                driver.FastestLap.rank == '1' ? 'fastest-lap-highlight' : ''
+              "
+              *ngIf="i < 4"
+            >
+              {{ driver.points }}
+              <i
+                *ngIf="driver.FastestLap.rank == '1'"
+                class="fas fa-stopwatch fastest-lap-highlight ml-1 hide-md"
+              ></i>
+            </td>
           </tr>
         </tbody>
       </table>

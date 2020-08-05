@@ -31,7 +31,14 @@
           <!-- Map through race results-->
           <tr *ngFor="let driver of lastRaceResults.Races[0].Results">
             <td>{{ driver.position }}</td>
-            <td>{{ driver.Driver.familyName }}</td>
+            <td>
+              <img
+                src="assets/flags/{{ driver.Driver.nationality }}.png"
+                alt=""
+                style="width: 30px; height: auto;"
+                class="mr-2 hide-md"
+              />{{ driver.Driver.familyName }}
+            </td>
             <td
               [class]="driver.Constructor.constructorId"
               class="colour-team"
@@ -44,7 +51,21 @@
             </td>
             <!-- If lapped/DNF, show status rather than time -->
             <td class="hide-sm" *ngIf="!driver.Time">{{ driver.status }}</td>
-            <td>{{ driver.points }}</td>
+
+            <!-- Points - use fastest-lap class to turn purple if driver also had FL - show stopwatch icon on larger screens -->
+            <td
+              [ngClass]="
+                driver.FastestLap && driver.FastestLap.rank == '1'
+                  ? 'fastest-lap-highlight'
+                  : ''
+              "
+            >
+              {{ driver.points
+              }}<i
+                *ngIf="driver.FastestLap && driver.FastestLap.rank == '1'"
+                class="fas fa-stopwatch fastest-lap-highlight ml-1 hide-md"
+              ></i>
+            </td>
           </tr>
         </tbody>
       </table>
