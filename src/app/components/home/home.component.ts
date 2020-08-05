@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,8 @@ export class HomeComponent implements OnInit {
   // NEXT RACE
   nextRace: any = {};
   nextRaceTime: string = '';
+
+  nextRaceTimeDate: string;
   nextRaceLoading: boolean = true;
 
   // Text format for countdown
@@ -45,12 +48,13 @@ export class HomeComponent implements OnInit {
       // Get next race info from dataService
       this.nextRace = res.MRData.RaceTable.Races;
 
-      // Create string based on next race date and time - used in countdown timer
-      this.nextRaceTime = this.nextRaceTime.concat(
+      // Create string based on next race date and time - used in countdown timer - 'T' between date/time ensures compat. with Safari
+      this.nextRaceTimeDate = this.nextRaceTime.concat(
         res.MRData.RaceTable.Races[0].date,
-        ' ',
+        'T',
         res.MRData.RaceTable.Races[0].time
       );
+
       // Set loading to false
       this.nextRaceLoading = false;
     });

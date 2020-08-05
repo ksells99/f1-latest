@@ -22,7 +22,7 @@
             <th>Driver</th>
 
             <th colspan="2">Constructor</th>
-            <th>Laps</th>
+            <th class="hide-xs">Laps</th>
             <th class="hide-sm">Time</th>
             <th>Pts.</th>
           </tr>
@@ -44,7 +44,7 @@
               class="colour-team"
             ></td>
             <td>{{ driver.Constructor.name }}</td>
-            <td>{{ driver.laps }}</td>
+            <td class="hide-xs">{{ driver.laps }}</td>
             <!-- Lapped/DNF have no time so need to check -->
             <td class="hide-sm" *ngIf="driver.Time">
               {{ driver.Time.time }}

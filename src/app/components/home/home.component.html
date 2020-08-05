@@ -24,7 +24,7 @@
           class="countdown"
           [text]="text"
           units="Days | Hours | Minutes | Seconds"
-          [end]="nextRaceTime"
+          [end]="nextRaceTimeDate"
         ></countdown>
       </div>
     </div>
@@ -165,7 +165,7 @@
             <th>Driver</th>
 
             <th colspan="2">Constructor</th>
-            <th>Laps</th>
+            <th class="hide-xs">Laps</th>
             <th class="hide-sm">Time</th>
             <th>Pts.</th>
           </tr>
@@ -186,7 +186,7 @@
               class="colour-team"
             ></td>
             <td *ngIf="i < 4">{{ driver.Constructor.name }}</td>
-            <td *ngIf="i < 4">{{ driver.laps }}</td>
+            <td class="hide-xs" *ngIf="i < 4">{{ driver.laps }}</td>
             <td class="hide-sm" *ngIf="i < 4">{{ driver.Time.time }}</td>
 
             <!-- Points - use fastest-lap class to turn purple if driver also had FL - show stopwatch icon on larger screens -->
