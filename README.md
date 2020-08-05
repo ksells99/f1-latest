@@ -1,27 +1,19 @@
 # F1Latest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
+Angular application that collates all the latest F1 information - calendar, standings and the results of the previous race. I have also implemented a Twitter feed showing the latest tweets from the official F1 Twitter account.
 
-## Development server
+Data is obtained via the fantastic Ergast API (http://ergast.com/mrd/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The application is fully responsive and styling is handled via a Bootswatch theme.
 
-## Code scaffolding
+The app is hosted on Github Pages and can be accessed here: **https://ksells99.github.io/f1-latest/**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Showcase1](/showcase-1.png?raw=true "Showcase1")
 
-## Build
+![Showcase2](/showcase-2.png?raw=true "Showcase2")
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![Showcase3](/showcase-3.png?raw=true "Showcase3")
 
-## Running unit tests
+![Showcase4](/showcase-4.png?raw=true "Showcase4")
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Showcase5](/showcase-5.png?raw=true "Showcase5")
