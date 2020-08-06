@@ -20,3 +20,9 @@
     margin-right: 100% !important;
   }
 }
+
+@media (max-width: 375px) {
+  img.car {
+    width: 80px !important;
+  }
+}

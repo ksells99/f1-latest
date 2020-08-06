@@ -18,6 +18,12 @@ p.measurements-text {
   padding: 3px;
 }
 
+@media (max-width: 400px) {
+  p.measurements-text {
+    font-size: small;
+  }
+}
+
 div.countdown {
   display: block;
 }
