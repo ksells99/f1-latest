@@ -14,3 +14,9 @@
   margin: 50px auto !important;
   border-width: 0.4em;
 }
+
+@media (max-width: 477px) {
+  .flag {
+    margin-right: 100% !important;
+  }
+}

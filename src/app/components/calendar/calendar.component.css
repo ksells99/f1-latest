@@ -4,3 +4,27 @@
   margin: 50px auto !important;
   border-width: 0.4em;
 }
+
+@media (max-width: 500px) {
+  h3 {
+    font-size: x-large;
+  }
+
+  h4 {
+    font-size: large;
+  }
+
+  h5 {
+    font-size: medium;
+  }
+}
+
+@media (max-width: 390px) {
+  h4 {
+    font-size: medium;
+  }
+
+  h5 {
+    font-size: small;
+  }
+}
