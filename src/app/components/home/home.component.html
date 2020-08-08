@@ -223,9 +223,18 @@
 
     <div class="card-body">
       <a
+        *ngIf="userTheme != 'dark'"
         class="twitter-timeline"
         data-height="1500"
         data-theme="light"
+        href="https://twitter.com/F1?ref_src=twsrc%5Etfw"
+        >Tweets by F1</a
+      >
+      <a
+        *ngIf="userTheme == 'dark'"
+        class="twitter-timeline"
+        data-height="1500"
+        data-theme="dark"
         href="https://twitter.com/F1?ref_src=twsrc%5Etfw"
         >Tweets by F1</a
       >

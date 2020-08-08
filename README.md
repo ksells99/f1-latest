@@ -4,7 +4,7 @@ Angular application that collates all the latest F1 information - calendar, stan
 
 Data is obtained via the fantastic Ergast API (http://ergast.com/mrd/).
 
-The application is fully responsive and styling is handled via a Bootswatch theme.
+The application is fully responsive and styling is handled via a Bootswatch theme. It also features a dark mode theme, controlled by a toggle switch - this is also persisted via local storage.
 
 The app is hosted on Github Pages and can be accessed here: **https://ksells99.github.io/f1-latest/**
 

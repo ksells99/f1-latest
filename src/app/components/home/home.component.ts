@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   // NEXT RACE
   nextRace: any = {};
   nextRaceTime: string = '';
@@ -42,7 +41,13 @@ export class HomeComponent implements OnInit {
   // Inject dataservice as dependency
   constructor(private dataService: DataService) {}
 
+  //
+  userTheme: string = null;
+
   ngOnInit() {
+    // Get user's saved theme from local storage (determines theme for Twitter widget)
+    this.userTheme = localStorage.getItem('theme');
+
     // NEXT RACE INFO
     this.dataService.getNextRace().subscribe((res) => {
       // Get next race info from dataService
@@ -77,7 +82,9 @@ export class HomeComponent implements OnInit {
 
       this.lastRaceResultsLoading = false;
     });
+  }
 
+  ngAfterViewInit() {
     // Twitter feed - ensures widget reloads when user navigates back to the home component
     (<any>window).twttr.widgets.load();
   }

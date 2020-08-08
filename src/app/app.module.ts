@@ -14,7 +14,15 @@ import { LastRaceComponent } from './components/last-race/last-race.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, DriverStandingsComponent, ConstructorStandingsComponent, LastRaceComponent, CalendarComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    DriverStandingsComponent,
+    ConstructorStandingsComponent,
+    LastRaceComponent,
+    CalendarComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, CountdownModule],
   providers: [DataService],
   bootstrap: [AppComponent],

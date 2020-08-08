@@ -16,13 +16,27 @@
       src="https://kit.fontawesome.com/c159863e43.js"
       crossorigin="anonymous"
     ></script>
+    <!-- <script src="dark-mode.js" crossorigin="anonymous"></script> -->
     <script
       async
       src="https://platform.twitter.com/widgets.js"
       charset="utf-8"
     ></script>
   </head>
-  <body style="padding-top: 100px;">
+  <body style="padding-top: 100px;" class="light-theme">
     <app-root></app-root>
+    <div class="text-center">
+      <!-- <button class="btn btn-success btn-small text-center mb-3">
+        Toggle Theme
+      </button> -->
+
+      <label class="switch mt-3 mb-0">
+        <input type="checkbox" id="slider" />
+        <span class="slider round"></span>
+      </label>
+      <p id="toggle-text" class="text-muted mt-0">
+        Dark Mode
+      </p>
+    </div>
   </body>
 </html>
