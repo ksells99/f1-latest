@@ -86,6 +86,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     // Twitter feed - ensures widget reloads when user navigates back to the home component
-    (<any>window).twttr.widgets.load();
+    if ((<any>window).twttr) {
+      (<any>window).twttr.widgets.load();
+    }
   }
 }

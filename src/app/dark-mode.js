@@ -8,10 +8,13 @@ if (userTheme == "dark") {
 }
 
 themeSwitch.addEventListener("click", () => {
+  let twttr;
   document.body.classList.toggle("dark-theme");
   window.scrollTo(0, 0);
   location.reload();
-  twttr.widgets.load();
+  if (twttr) {
+    twttr.widgets.load();
+  }
 
   if (document.body.classList.contains("dark-theme")) {
     localStorage.setItem("theme", "dark");
