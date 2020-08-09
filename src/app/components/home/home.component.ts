@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // NEXT RACE
   nextRace: any = {};
   nextRaceTime: string = '';
+  nextRaceUTCtime: string = '';
 
   nextRaceTimeDate: string;
   nextRaceLoading: boolean = true;
@@ -59,6 +60,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         'T',
         res.MRData.RaceTable.Races[0].time
       );
+
+      // Get UTC race start time - remove excess chars from end of string.
+      this.nextRaceUTCtime = res.MRData.RaceTable.Races[0].time.slice(0, -4);
 
       // Set loading to false
       this.nextRaceLoading = false;
