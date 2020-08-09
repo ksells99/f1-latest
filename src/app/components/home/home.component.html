@@ -83,7 +83,7 @@
         </div>
         <div
           *ngIf="driverStandingsLoading"
-          class="spinner-border text-primary text-center"
+          class="home-spinner spinner-border text-primary text-center"
           role="status"
         ></div>
       </div>
@@ -136,7 +136,7 @@
         </div>
         <div
           *ngIf="constructorStandingsLoading"
-          class="spinner-border text-primary text-center"
+          class="home-spinner spinner-border text-primary text-center"
           role="status"
         ></div>
       </div>
@@ -202,6 +202,7 @@
                 class="fas fa-stopwatch fastest-lap-highlight ml-1 hide-md"
               ></i>
             </td>
+            <!-- If FL data not provided by API, just show points without FL styling -->
             <td *ngIf="!driver.FastestLap && i < 4">
               {{ driver.points }}
             </td>
@@ -214,7 +215,7 @@
     </div>
     <div
       *ngIf="lastRaceResultsLoading"
-      class="spinner-border text-primary text-center"
+      class="home-spinner spinner-border text-primary text-center"
       role="status"
     ></div>
   </div>

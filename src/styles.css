@@ -189,6 +189,10 @@ div.Secs.measurements {
   color: #ffffffca;
 }
 
+.dark-theme .home-spinner.spinner-border.text-primary {
+  color: #18bc9c !important;
+}
+
 /* Hide certain table columns on mobile */
 @media (max-width: 428px) {
   .hide-xs {
