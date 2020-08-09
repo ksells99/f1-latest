@@ -194,13 +194,16 @@
               [ngClass]="
                 driver.FastestLap.rank == '1' ? 'fastest-lap-highlight' : ''
               "
-              *ngIf="i < 4"
+              *ngIf="driver.FastestLap && i < 4"
             >
               {{ driver.points }}
               <i
-                *ngIf="driver.FastestLap.rank == '1'"
+                *ngIf="driver.FastestLap && driver.FastestLap.rank == '1'"
                 class="fas fa-stopwatch fastest-lap-highlight ml-1 hide-md"
               ></i>
+            </td>
+            <td *ngIf="!driver.FastestLap && i < 4">
+              {{ driver.points }}
             </td>
           </tr>
         </tbody>
