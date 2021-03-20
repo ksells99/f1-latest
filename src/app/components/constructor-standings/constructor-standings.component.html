@@ -40,16 +40,23 @@
             <img
               src="assets/flags/{{ constructor.Constructor.nationality }}.png"
               alt=""
-              style="width: 30px; height: auto;"
+              style="width: 30px; height: auto"
               class="mr-2 flag"
             />
-            {{ constructor.Constructor.name }}
+            <!-- Shorten names of Haas & Alpine -->
+            {{
+              constructor.Constructor.name === "Haas F1 Team"
+                ? "Haas"
+                : constructor.Constructor.name === "Alpine F1 Team"
+                ? "Alpine"
+                : constructor.Constructor.name
+            }}
           </td>
           <td>
             <img
               src="assets/cars/{{ constructor.Constructor.constructorId }}.png"
               alt=""
-              style="width: 100px; height: auto;"
+              style="width: 100px; height: auto"
               class="car"
             />
           </td>

@@ -29,6 +29,7 @@ export class DataService {
   }
 
   getCalendar(): Observable<any> {
-    return this.http.get('https://ergast.com/api/f1/current.json');
+    // return this.http.get('https://ergast.com/api/f1/current.json');
+    return this.http.get('https://ergast.com/api/f1/2021.json');
   }
 }

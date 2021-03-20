@@ -66,11 +66,15 @@ div.Secs.measurements {
 }
 
 .mclaren {
-  background-color: #ff8700;
+  background-color: #ff9800;
 }
 
 .red_bull {
   background-color: #0600ef;
+}
+
+.aston_martin {
+  background-color: #006f62;
 }
 
 .racing_point {
@@ -78,24 +82,28 @@ div.Secs.measurements {
 }
 
 .alphatauri {
-  background-color: #ffff;
-  box-shadow: 0px 0px 0px 1px rgb(158, 158, 158) inset;
+  background-color: #2b4562;
 }
 
 .renault {
   background-color: #fff500;
 }
 
+.alpine {
+  background-color: #0090ff;
+}
+
 .alfa {
-  background-color: #960000;
+  background-color: #900000;
 }
 
 .williams {
-  background-color: #0082fa;
+  background-color: #005aff;
 }
 
 .haas {
-  background-color: #787878;
+  background-color: #ffff;
+  box-shadow: 0px 0px 0px 1px rgb(158, 158, 158) inset;
 }
 
 /* Coloured block for team colour */
