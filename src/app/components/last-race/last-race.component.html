@@ -35,7 +35,7 @@
               <img
                 src="assets/flags/{{ driver.Driver.nationality }}.png"
                 alt=""
-                style="width: 30px; height: auto;"
+                style="width: 30px; height: auto"
                 class="mr-2 hide-md"
               />{{ driver.Driver.familyName }}
             </td>
@@ -43,7 +43,15 @@
               [class]="driver.Constructor.constructorId"
               class="colour-team"
             ></td>
-            <td>{{ driver.Constructor.name }}</td>
+            <td>
+              {{
+                driver.Constructor.name === "Haas F1 Team"
+                  ? "Haas"
+                  : driver.Constructor.name === "Alpine F1 Team"
+                  ? "Alpine"
+                  : driver.Constructor.name
+              }}
+            </td>
             <td class="hide-xs">{{ driver.laps }}</td>
             <!-- Lapped/DNF have no time so need to check -->
             <td class="hide-sm" *ngIf="driver.Time">

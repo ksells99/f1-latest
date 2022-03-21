@@ -36,7 +36,7 @@
             <img
               src="assets/flags/{{ driver.Driver.nationality }}.png"
               alt=""
-              style="width: 30px; height: auto;"
+              style="width: 30px; height: auto"
               class="mr-2 flag"
             />
             {{ driver.Driver.familyName }}
@@ -45,7 +45,15 @@
             [class]="driver.Constructors[0].constructorId"
             class="colour-team"
           ></td>
-          <td>{{ driver.Constructors[0].name }}</td>
+          <td>
+            {{
+              driver.Constructors[0].name === "Haas F1 Team"
+                ? "Haas"
+                : driver.Constructors[0].name === "Alpine F1 Team"
+                ? "Alpine"
+                : driver.Constructors[0].name
+            }}
+          </td>
           <td>{{ driver.points }}</td>
           <td class="hide-sm">{{ driver.wins }}</td>
         </tr>

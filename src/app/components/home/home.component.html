@@ -63,7 +63,17 @@
                   [class]="driver.Constructors[0].constructorId"
                   class="colour-team"
                 ></td>
-                <td *ngIf="i < 6">{{ driver.Constructors[0].name }}</td>
+                <!-- Shorten names of Haas & Alpine -->
+                <td *ngIf="i < 6">
+                  {{
+                    driver.Constructors[0].name === "Haas F1 Team"
+                      ? "Haas"
+                      : driver.Constructors[0].name === "Alpine F1 Team"
+                      ? "Alpine"
+                      : driver.Constructors[0].name
+                  }}
+                </td>
+
                 <td *ngIf="i < 6">{{ driver.points }}</td>
               </tr>
             </tbody>
@@ -186,7 +196,15 @@
               [class]="driver.Constructor.constructorId"
               class="colour-team"
             ></td>
-            <td *ngIf="i < 4">{{ driver.Constructor.name }}</td>
+            <td *ngIf="i < 4">
+              {{
+                driver.Constructor.name === "Haas F1 Team"
+                  ? "Haas"
+                  : driver.Constructor.name === "Alpine F1 Team"
+                  ? "Alpine"
+                  : driver.Constructor.name
+              }}
+            </td>
             <td class="hide-xs" *ngIf="i < 4">{{ driver.laps }}</td>
             <td class="hide-sm" *ngIf="i < 4">{{ driver.Time.time }}</td>
 
